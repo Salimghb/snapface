@@ -9,21 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
   buttonText!: string;
+  readonly snapped = 'Unlike';
+  readonly notSnapped = 'Like';
 
   ngOnInit(): void {
-    this.buttonText = 'Like';
+    this.buttonText = this.notSnapped;
   }
 
   onSnap() {
-    const snapped = 'Unlike';
-    const notSnapped = 'Like';
-
-    if (this.buttonText === snapped) {
+    if (this.buttonText === this.snapped) {
       this.faceSnap.snaps--;
-      this.buttonText = notSnapped;
+      this.buttonText = this.notSnapped;
     } else {
       this.faceSnap.snaps++;
-      this.buttonText = snapped;
+      this.buttonText = this.snapped;
     }
   }
 }
