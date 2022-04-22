@@ -1,14 +1,22 @@
-<div class="face-snap-card" [ngClass]="{'snapped': buttonText === snapped}">
-  <h2>{{ faceSnap.title | uppercase}}</h2>
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === snapped }">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
 
-  <p>Mis en ligne {{ faceSnap.createdDate | date:'à HH:mm, le d MMMM yyyy'}}</p>
+  <h1>{{ 5265165 | number: "1.2-2" }} €</h1>
+
+  <h1>{{ .256515 | percent}}</h1>
+
+  <h1>{{ 260| currency: "EUR" : "code" }}</h1>
+
+  <p>
+    Mis en ligne {{ faceSnap.createdDate | date: "à HH:mm, le d MMMM yyyy" }}
+  </p>
 
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
 
   <p>{{ faceSnap.description }}</p>
 
   <p *ngIf="faceSnap.location === 'Paris'">
-    Photo prise à {{ faceSnap.location | titlecase}}
+    Photo prise à {{ faceSnap.location | titlecase }}
   </p>
 
   <p>
@@ -17,5 +25,4 @@
       👍 {{ faceSnap.snaps }}
     </span>
   </p>
-
 </div>
