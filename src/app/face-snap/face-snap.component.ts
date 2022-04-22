@@ -1,3 +1,4 @@
+import { FaceSnapsService } from './../services/face-snaps.service';
 import { FaceSnap } from './../models/face-snap.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -12,16 +13,18 @@ export class FaceSnapComponent implements OnInit {
   readonly snapped = 'Unlike';
   readonly notSnapped = 'Like';
 
+  constructor(private faceSnapService: FaceSnapsService) {}
+
   ngOnInit(): void {
     this.buttonText = this.notSnapped;
   }
 
   onSnap() {
     if (this.buttonText === this.snapped) {
-      this.faceSnap.snaps--;
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'Unsnap');
       this.buttonText = this.notSnapped;
     } else {
-      this.faceSnap.snaps++;
+      this.faceSnapService.snapFaceSnapById(this.faceSnap.id, 'Snap');
       this.buttonText = this.snapped;
     }
   }
