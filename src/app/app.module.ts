@@ -1,3 +1,4 @@
+import { httpInterceptorsProviders } from './interceptors/index';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -37,6 +38,7 @@ import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
       provide: LOCALE_ID,
       useValue: 'fr-FR',
     },
+    httpInterceptorsProviders,
   ],
   bootstrap: [AppComponent],
 })
