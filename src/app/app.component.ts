@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
   interval$!: Observable<string>;
   ngOnInit(): void {
     this.interval$ = interval(1000).pipe(
-
       filter((value) => value % 3 === 0),
 
       map((value) =>
@@ -19,11 +18,11 @@ export class AppComponent implements OnInit {
           : `Je suis ${value} et je suis impair`
       ),
 
-      tap(txt => this.logger(txt))
+      tap((txt) => this.logger(txt))
     );
   }
 
-  logger(text: string):void {
-    console.log(`log: ${text}`)
+  logger(text: string): void {
+    console.log(`log: ${text}`);
   }
 }

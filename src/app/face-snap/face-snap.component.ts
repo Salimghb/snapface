@@ -17,7 +17,7 @@ export class FaceSnapComponent implements OnInit {
   constructor(
     private faceSnapService: FaceSnapsService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.buttonText = this.notSnapped;

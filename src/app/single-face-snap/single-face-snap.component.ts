@@ -18,7 +18,7 @@ export class SingleFaceSnapComponent implements OnInit {
   constructor(
     private faceSnapService: FaceSnapsService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.buttonText = this.notSnapped;

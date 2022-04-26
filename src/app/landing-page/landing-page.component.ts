@@ -16,7 +16,7 @@ export class LandingPageComponent implements OnInit {
     // TODO document why this method 'ngOnInit' is empty
   }
 
-  onSubmitForm(form : NgForm): void {
+  onSubmitForm(form: NgForm): void {
     console.log(form.value);
   }
 
