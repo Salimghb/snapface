@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
+  onAddNewFaceSnap() {
+    this.router.navigateByUrl('/create');
   }
-
 }
