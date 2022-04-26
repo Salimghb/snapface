@@ -1,4 +1,4 @@
-<div class="face-snap-card" [ngClass]="{ snapped: buttonText === snapped }">
+<div class="face-snap-card" *ngIf="faceSnap$ | async as faceSnap" [ngClass]="{ snapped: buttonText === snapped }">
   <h2>{{ faceSnap.title | uppercase }}</h2>
 
   <a routerLink="/facesnaps">GO BACK</a>
@@ -16,7 +16,7 @@
   </p>
 
   <p>
-    <button (click)="onSnap()">{{ buttonText }}</button>
+    <button (click)="onSnap(faceSnap.id)">{{ buttonText }}</button>
     <span class="number-of-snaps" [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps * 30 + ',0)' }">
       👍 {{ faceSnap.snaps }}
     </span>
