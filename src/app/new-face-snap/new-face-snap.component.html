@@ -25,7 +25,8 @@
     </div>
 
     <div>
-      <button class="btn btn-warning" type="submit" (click)="onSubmitForm()">Enregistrer</button>
+      <button class="btn btn-warning" type="submit" (click)="onSubmitForm()"
+        [disabled]="snapForm.invalid">Enregistrer</button>
     </div>
 
   </form>

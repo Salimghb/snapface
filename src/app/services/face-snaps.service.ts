@@ -54,4 +54,20 @@ export class FaceSnapsService {
       throw new Error("Aucun FaceSnap trouvé pour l'id " + faceSnapId);
     }
   }
+
+  addFaceSnap(formValue: {
+    title: string;
+    description: string;
+    imageUrl: string;
+    location?: string;
+  }) {
+    const newFaceSnap: FaceSnap = {
+      ...formValue,
+      createdDate: new Date(),
+      snaps: 0,
+      id: this.myFaceSnaps[this.myFaceSnaps.length - 1].id + 1,
+    };
+
+    this.myFaceSnaps.push(newFaceSnap);
+  }
 }
